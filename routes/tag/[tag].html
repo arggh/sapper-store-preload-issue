@@ -1,0 +1,17 @@
+<p>This route component will pick up the parameter `tag` from the path (FOOBAR in the case of path being /tag/FOOBAR) and set it to a global store as the value of `activeTag`.</p>
+
+<p>However, it does not work when the page is rendered by the server, as you can see by hitting ⌘ + R. The value of `activeTag` changes to null.</p>
+
+<p>If you comment out the last line of code in this component's (/routes/tag/[tag].html) preload function, it will magically start working.</p>
+
+<script>
+  export default {  
+    preload({ params, query }) {
+      const { tag = null } = params;  
+      this.store.set({ activeTag: tag });
+
+      // If you comment the line below, setting state will start magically working
+      return { whatever: 'I DONT CARE' };
+    }
+  };
+</script>

@@ -1,0 +1,7 @@
+{
+	"background_color": "#222222",
+	"theme_color": "#eeeeee",
+	"name": "Sapper issue",
+	"display": "minimal-ui",
+	"start_url": "/"
+}
